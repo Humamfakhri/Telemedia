@@ -1,0 +1,261 @@
+ @font-face { 
+    font-family: Micro; 
+    src: url(font/Segoe_UI.woff); 
+}
+
+@font-face {
+	font-family: Micro_Bold;
+	src: url(font/Segoe_UI_Bold.woff);
+}
+
+body {
+	font-family: Micro;
+}
+
+.header {
+	width: 100%;
+	background-color: #21262e;
+}
+
+.brand {
+	margin: 0 auto;
+}
+
+.cart-icon {
+	position: absolute;
+	right: 125px;
+	top: 15px;
+	font-size: 20px;
+}
+
+.fa-shopping-cart {
+	color: white;
+}
+
+.fa-shopping-cart:hover {
+	color: cyan;
+}
+
+.navigation {
+	background-color: #262c35;
+	font-family: Micro;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav-link:hover {
+	color: cyan;
+}
+
+.icon_nav {
+	margin-top: 4px;
+	margin-right: 7px;
+	border-radius: 10%;
+}
+
+.navbar-brand {
+	font-size: 26px;
+	font-weight: bolder;
+	letter-spacing: 2px;
+}
+
+.tempat-akun {
+	position: absolute;
+	right: 100px;
+}
+
+.avatar img {
+	width: 30px;
+	border-radius: 100%;
+}
+
+.nama_akun {
+	padding-top: 2px;
+	padding-left: 10px;
+	font-size: 16px;
+	color: white;
+}
+
+.keluar {
+	color: red;
+}
+
+.keluar:hover {
+	color: red;
+}
+
+
+
+	/*TABEL*/
+
+.judul-tabel {
+	margin-top: 70px;
+}
+
+.teks-judul-tabel {
+	font-size: 19px;
+	letter-spacing: 1px;
+	padding: 20px 0;
+	border-bottom: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.produk {
+	text-align: left;
+}
+
+.tabel-gambar {
+	text-align: right;
+}
+
+.tabel-gambar i {
+	vertical-align: middle;
+	color: black;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.isi-tabel {
+	padding: 20px;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.isi-tabel img {
+	padding-right: 20px;
+	width: 100px;
+}
+
+/*KONTEN*/
+
+.label {
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	box-shadow: 1px 2px 4px #999999;
+}
+
+.label h1 {
+	color: #383838;
+	font-weight: bold;
+}
+
+
+
+	/*FOOTER*/
+
+a:hover {
+	text-decoration: none;
+}
+
+.footer-main-div {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	background: #293039;
+	padding: 20px 0;
+}
+
+.footer-social-icons {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.footer-social-icons ul {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.footer-social-icons ul li {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0 15px;
+	border-radius: 100%;
+}
+
+.footer-social-icons ul li a {
+	color: #00c4cc;
+	font-size: 30px;
+}
+
+.footer-social-icons ul li a:hover {
+	color: #fff;
+}
+
+.footer-social-icons ul li a i {
+	line-height: 50px;
+}
+
+.footer-menu-one {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.footer-menu-one ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-menu-one ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.footer-menu-one ul li a {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.footer-menu-one ul li a:hover {
+	color: #00c4cc;
+}
+
+.footer-menu-two {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.footer-menu-two ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-menu-two ul li {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.footer-menu-two ul li a {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.footer-menu-two ul li a:hover {
+	color: #00c4cc;
+}
+
+.footer-bawah {
+	text-align: center;
+	background-color: #21262e;
+	color: #fff;
+	letter-spacing: 1px;
+	padding: 7px;
+	font-size: 14px;
+}

@@ -1,0 +1,230 @@
+ @font-face { 
+    font-family: Micro; 
+    src: url(font/Segoe_UI.woff); 
+}
+
+@font-face {
+	font-family: Micro_Bold;
+	src: url(font/Segoe_UI_Bold.woff);
+}
+
+body {
+	font-family: Micro;
+}
+
+.navbar {
+	background-color: #080808;
+	font-family: Micro;
+}
+
+.icon_nav {
+	margin-top: 4px;
+	margin-right: 7px;
+	border-radius: 10%;
+}
+
+.navbar-brand {
+	font-size: 19px;
+	font-weight: bolder;
+}
+
+.vertical {
+	background-color: #fff;
+	width: 2px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+.fa-shopping-cart {
+	color: white;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 15px;
+
+}
+
+.vertical2 {
+	background-color: #fff;
+	width: 2px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 10px;
+	margin-top: 7px;
+}
+
+.avatar{
+	width: 22px;
+	height: 22px;
+	background: #dac52c;
+	border-radius: 100%;
+}
+
+.akun {
+	margin-right: 90px;
+}
+
+.nama_akun {
+	padding-left: 30px;
+}
+
+.keluar {
+	color: red;
+}
+
+.keluar:hover {
+	color: red;
+}
+
+/*JUMBOTRON*/
+
+.jumbotron {
+	background-image: url(gambar/Beranda.jpg);
+	background-size: cover;
+	height: 791px;
+	text-align: center;
+	color: #fff;
+	margin-top: -190px;
+}
+
+.display-4 {
+	margin-top: 250px;
+	margin-bottom: 40px;
+}
+
+.jumbotron p {
+	font-size: 20px;
+}
+
+.jumbotron .btn {
+	margin-top: 20px;
+	font-size: 17px;
+	padding: 8px 50px;
+	background-color: #00c4cc;
+	border-color: #00c4cc;
+}
+
+	/*BERANDA*/
+.jumbo_title {
+	text-align: center;
+	font-size: 40px;
+	color: #383838;
+}
+
+
+	/*FOOTER*/
+
+a:hover {
+	text-decoration: none;
+}
+
+.footer-main-div {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	background: #293039;
+	padding: 20px 0;
+}
+
+.footer-social-icons {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.footer-social-icons ul {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.footer-social-icons ul li {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0 15px;
+	border-radius: 100%;
+}
+
+.footer-social-icons ul li a {
+	color: #00c4cc;
+	font-size: 30px;
+}
+
+.footer-social-icons ul li a:hover {
+	color: #fff;
+}
+
+.footer-social-icons ul li a i {
+	line-height: 50px;
+}
+
+.footer-menu-one {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.footer-menu-one ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-menu-one ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.footer-menu-one ul li a {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.footer-menu-one ul li a:hover {
+	color: #00c4cc;
+}
+
+.footer-menu-two {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.footer-menu-two ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-menu-two ul li {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.footer-menu-two ul li a {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.footer-menu-two ul li a:hover {
+	color: #00c4cc;
+}
+
+.footer-bawah {
+	text-align: center;
+	background-color: #21262e;
+	color: #fff;
+	letter-spacing: 1px;
+	padding: 7px;
+	font-size: 14px;
+}

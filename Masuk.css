@@ -1,0 +1,142 @@
+ @font-face { 
+    font-family: Micro; 
+    src: url(font/Segoe_UI.woff); 
+}
+
+@font-face {
+	font-family: Micro_Bold;
+	src: url(font/Segoe_UI_Bold.woff);
+}
+
+body {
+	font-family: Micro;
+	background-image: url(gambar/Form.jpg);
+}
+
+.navbar {
+	background-color: transparent;
+	font-family: Micro;
+}
+
+.icon_nav {
+	margin-top: 4px;
+	margin-right: 7px;
+	border-radius: 10%;
+}
+
+.navbar-brand {
+	font-size: 19px;
+	font-weight: bolder;
+}
+
+.vertical {
+	background-color: #fff;
+	width: 2px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+/*FORM*/
+#kotak {
+    background: transparent;
+    height: 410px;
+    margin: 20px auto;
+    width: 350px;
+    color: #fff;
+}
+
+form {
+	position: relative;
+}
+
+.konten {
+	text-align: center;
+}
+
+#tm {
+	border-radius: 5%;
+	margin-bottom: 20px;
+}
+
+.judul h3 {
+	margin-bottom: 50px;
+}
+
+input {
+	width: 100%;
+	background: transparent;
+	border: none; ;
+	color: #fff;
+	outline: none;
+}
+
+.isi {
+	padding-left: 40px;
+	outline: none;
+}
+
+.fa-envelope {
+	position: absolute;
+	left: 7px;
+	top: 5px;
+	outline: none;
+
+}
+
+.fa-lock {
+	position: absolute;
+	left: 7px;
+	top: 49px;
+	outline: none;
+
+}
+
+.border_bawah {
+	background: #2dbd6e;
+    height: 2px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#submit-btn {
+	border: 2px solid #2dbd6e;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+
+#daftar {
+    color: #fff;
+    font-size: 12pt;
+}
+
+#daftar a {
+	color: #2dbd63;
+}
+
+#daftar a:hover {
+	color: cyan;
+}
+
+/*#daftar:hover {
+	color: #2dbd6e;
+}*/
+
+.kembali {
+	color: #2dbd6e;
+	text-transform: uppercase;
+}
+
+.copyright {
+	position: absolute;
+	font-size: 9pt;
+	color: #aaa;
+	right: 20px;
+	bottom: 10px;
+}

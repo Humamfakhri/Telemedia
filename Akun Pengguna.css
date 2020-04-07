@@ -1,0 +1,119 @@
+ @font-face { 
+    font-family: Micro; 
+    src: url(font/Segoe_UI.woff); 
+}
+
+@font-face {
+	font-family: Micro_Bold;
+	src: url(font/Segoe_UI_Bold.woff);
+}
+
+html, body {
+  	font-family: Micro;
+}
+
+.navbar {
+	background-color: #21262e;
+	font-family: Micro;
+}
+
+.icon_nav {
+	margin-top: 2px;
+	margin-right: 7px;
+	border-radius: 10%;
+}
+
+.navbar-brand {
+	font-size: 19px;
+	font-weight: bolder;
+}
+
+.vertical {
+	background-color: #fff;
+	width: 2px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+h4 {
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+
+.cari {
+	border-color: #fff;
+	color: #fff;
+}
+
+.cari:hover {
+	color: #00c4cc;
+	background-color: transparent;
+	border-color: #00c4cc;
+}
+
+h5 i {
+	color: #00c4cc;
+	margin-top: 10px;
+}
+
+.fas:hover {
+	color: #fff;
+}
+
+	/*SIDEBAR*/
+
+.sidebar {
+	height: 594px;
+}
+
+.side_text {
+	color: white;
+}
+
+.side_text:hover {
+	color: #00c4cc;
+}
+
+.side_active {
+	color: cyan;
+}
+
+	/*CARD*/
+.display-4 {
+	font-weight: bold;
+}
+
+.card-text {
+	color: #fff;
+}
+
+.card-body a:hover {
+	text-decoration: none;
+}
+
+.card-text:hover {
+	color: cyan;
+}
+
+.card-icons {
+	position: absolute;
+	z-index: 0;
+	top: 25px;
+	right: 4px;
+	opacity: 0.4;
+	font-size: 90px;
+}
+
+
+	/*FORM*/
+
+.registrasi {
+	position: absolute;
+	right: 100px;
+	top: 30px;
+}
+
+.form-control {
+	width: 300px;
+}
