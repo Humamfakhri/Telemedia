@@ -44,7 +44,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active mr-2">
-                <h4 class="nav-link">Halo <b ><?php echo $_SESSION['nama']; ?></b>, Anda login sebagai <b>Admin</b></h4>
+                <h4 class="nav-link"><b>Admin</b></h4>
               </li>
             </ul>
           </div>
@@ -54,8 +54,8 @@
             </form>
           <div class="icon ml-4">
               <h5>
-                  <a href="#"><i class="fas fa-envelope mr-3" data-toggle="tooltip" title="Surat Masuk"></i></a>
-                  <a href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="Notifikasi"></i></a>
+                  <!-- <a href="#"><i class="fas fa-envelope mr-3" data-toggle="tooltip" title="Surat Masuk"></i></a>
+                  <a href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="Notifikasi"></i></a> -->
                   <a href="Beranda Logged.php?logout"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Keluar"></i></a>
               </h5>
           </div>
@@ -68,9 +68,9 @@
             <div class="col-md-10"></div>
         </div>
 
-        <!-- KONTEN -->
+        <!-- KIRI -->
         <div class="row no-gutters">
-            <div class="col-md-2 bg-dark pr-3 pt-4 sidebar">
+            <div class="col-md-2 bg-dark pr-3 pt-4 kiri">
               <div class="row profil">
                 <div class="avatar">
                   <img src="avatar/Autobot.jpg">
@@ -111,11 +111,10 @@
                           $table = "daftar";
                           $query = mysqli_query($koneksi, "SELECT count(*) AS jumlah FROM $table WHERE tipe_user = 'pengguna'");
                           $result = mysqli_fetch_array($query);
-
                          ?>
                         <h5 class="card-title">AKUN TERDAFTAR</h5>
-                        <div class="display-4">15</div>
-                        <a href="#"><p class="card-text">Lihat Detail<i class="fas fa-angle-double-right ml-2"></i></p></a>
+                        <div class="display-4"><?php echo "{$result['jumlah']}"; ?></div>
+                        <a href="Akun Pengguna.php"><p class="card-text">Lihat Detail<i class="fas fa-angle-double-right ml-2"></i></p></a>
                       </div>
                     </div>
 

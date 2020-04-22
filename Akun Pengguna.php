@@ -44,7 +44,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active mr-2">
-                <h4 class="nav-link">Halo <b ><?php echo $_SESSION['nama']; ?></b>, Anda login sebagai <b>Admin</b></h4>
+                <h4 class="nav-link"><b>Admin</b></h4>
               </li>
             </ul>
           </div>
@@ -54,26 +54,35 @@
             </form>
           <div class="icon ml-4">
               <h5>
-                  <a href="#"><i class="fas fa-envelope mr-3" data-toggle="tooltip" title="Surat Masuk"></i></a>
-                  <a href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="Notifikasi"></i></a>
+                  <!-- <a href="#"><i class="fas fa-envelope mr-3" data-toggle="tooltip" title="Surat Masuk"></i></a>
+                  <a href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="Notifikasi"></i></a> -->
                   <a href="Beranda Logged.php?logout"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Keluar"></i></a>
               </h5>
           </div>
         </div>
         </nav>
 
-        <!-- SIDEBAR -->
+        <!-- KIRI -->
         <div class="row no-gutters">
-            <div class="col-md-2  pr-3 pt-4 sidebar bg-dark">
+            <div class="col-md-2 bg-dark pr-3 pt-4 kiri">
+              <div class="row profil">
+                <div class="avatar">
+                  <img src="avatar/Autobot.jpg">
+                </div>
+                <div class="nama">
+                  <h5><?php echo $_SESSION['nama']; ?></h5>
+                </div>
+              </div>
+              <hr class="hr_profil">
                 <ul class="nav flex-column ml-3 mb-5">
                   <li class="nav-item">
-                    <a class="nav-link side_text" href="Dashboard.php"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a><hr class="bg-secondary">
+                    <a class="nav-link side_text " href="Dashboard.php"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link side_text" href="Daftar Jasa.php"><i class="fas fa-laptop-code mr-2"></i>Daftar Jasa</a><hr class="bg-secondary">
+                    <a class="nav-link side_text" href="Daftar Jasa.php"><i class="fas fa-laptop-code mr-2"></i>Daftar Jasa</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link side_text side_active" href="Akun Pengguna.php"><i class="fas fa-user mr-2 ml-1"></i>Akun Pengguna</a><hr class="bg-secondary">
+                    <a class="nav-link side_text side_active" href="Akun Pengguna.php"><i class="fas fa-user mr-2 ml-1"></i>Akun Pengguna</a>
                   </li>
                 </ul>
             </div>

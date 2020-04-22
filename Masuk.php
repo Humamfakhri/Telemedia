@@ -32,7 +32,7 @@
 
 				}elseif ($data["tipe_user"] == "pengguna") {
 					$_SESSION['tipe_user'] == "pengguna";
-					header("location: Beranda Logged.php");
+					header("location: Index.php");
 				}
 
 			}else{
@@ -65,7 +65,7 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li class="nav-item mr-2">
-		        <a class="nav-link" href="Beranda.php">Beranda</a>
+		        <a class="nav-link" href="Index.php">Beranda</a>
 		      </li>
 		    </ul>
 		  </div>

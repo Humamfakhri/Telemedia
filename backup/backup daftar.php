@@ -28,7 +28,6 @@
 
 	$sql = mysqli_query($koneksi, "SELECT * FROM daftar WHERE email = '$email' ");
 	$cek = mysqli_num_rows($sql);
-	
 		if ($cek > 0) {
 			echo "Akun sudah digunakan";
 		}else{

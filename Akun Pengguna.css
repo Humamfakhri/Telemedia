@@ -61,14 +61,46 @@ h5 i {
 	color: #fff;
 }
 
-	/*SIDEBAR*/
+.fa-sign-out-alt {
+	position: absolute;
+	top: 10px;
+	font-size: 25px;
+}
 
-.sidebar {
+	/*KIRI*/
+
+.kiri {
 	height: 594px;
+}
+
+.profil {
+	margin-bottom: 20px;
+	margin-left: 25px;
+}
+
+.avatar img {
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+}
+
+.nama h5 {
+	font-size: 17px;
+	color: white;
+	padding-top: 9px;
+	padding-left: 8px;
+}
+
+.hr_profil {
+	background: white;
+	width: 200px;
+	margin-left: 10px;
 }
 
 .side_text {
 	color: white;
+	font-size: 15px;
+	margin-bottom: 12px;
 }
 
 .side_text:hover {
@@ -78,6 +110,8 @@ h5 i {
 .side_active {
 	color: cyan;
 }
+
+
 
 	/*CARD*/
 .display-4 {

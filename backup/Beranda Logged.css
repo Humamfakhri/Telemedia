@@ -13,6 +13,7 @@ body {
 }
 
 .navbar {
+	background-color: #191d23;
 	font-family: Micro;
 	font-size: 15px;
 }
@@ -30,12 +31,6 @@ body {
 
 #navbarNav ul li a:hover {
 	color: cyan;
-}
-
-#navbarNav ul .tombol_daftar a:hover {
-	color: black;
-	background-color: cyan;
-	border-color: cyan;
 }
 
 .vertical {
@@ -75,8 +70,8 @@ body {
 }
 
 .masuk:hover {
-	background-color: transparent;
-	border-color: cyan;
+	background-color: #00c4cc;
+	border-color: #00c4cc;
 }
 
 .daftar {
@@ -85,6 +80,11 @@ body {
 	border-color: #fff;
 	padding: 1 1px;
 	font-size: 14px;
+}
+
+.daftar:hover {
+	background-color: #00c4cc;
+	border-color: #00c4cc;
 }
 
 .profil {
@@ -107,21 +107,23 @@ body {
 	color: red;
 }
 
-.log a:hover { color: red; }
+.log a:hover {
+	color: red;
+}
 
 /*JUMBOTRON*/
 
 .jumbotron {
 	background-image: url(gambar/Beranda.jpg);
 	background-size: cover;
-	height: 791px;
+	height: 790px;
 	text-align: center;
 	color: #fff;
-	margin-top: -190px;
+	margin-top: -130px;
 }
 
 .display-4 {
-	margin-top: 270px;
+	margin-top: 280px;
 	margin-bottom: 40px;
 }
 
@@ -137,7 +139,7 @@ body {
 	border-color: #00c4cc;
 }
 
-	/*TKJ A*/
+	/*OPENING*/
 
 .jumbo_title_1 {
 	font-size: 40px;
@@ -176,7 +178,7 @@ body {
 	font-size: 14px;
 }
 
-	/*TKJ B*/
+	/*JASA JASA*/
 
 .kebutuhan {
 	margin-top: 80px;
@@ -233,12 +235,8 @@ body {
 	font-size: 14px;
 }
 
-.transisi {
-	transition: transform 0.4s;
-}
-
-.transisi:hover {
-	transform: scale(1.03);
+.col-md-4 img {
+	height: 64px;
 }
 
 

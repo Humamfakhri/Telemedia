@@ -1,8 +1,5 @@
 <?php
    session_start();
-
-   if(isset($_SESSION['LOGIN'])) {
-   header('location: Beranda Logged.php'); }
 ?>
 
 
@@ -28,7 +25,7 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li class="nav-item mr-2">
-		        <a class="nav-link" href="Beranda.html">Beranda</a>
+		        <a class="nav-link" href="Index.php">Beranda</a>
 		      </li>
 		    </ul>
 		  </div>

@@ -42,86 +42,23 @@
 				<img src="icon/TM Dadu.png" width="45" class="icon_nav">
 			  	<a class="navbar-brand">TELEMEDIA</a>
 		  	</div>
-		  	<ul class="navbar-nav">
-		    	<li class="nav-item cart-icon">
-		        	<a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
-		    	</li>
-		    </ul>
 		</nav>
 
-		<nav class="navbar navbar-expand-lg navigation" id="navbar">
-		<div class="container">
-		  <div class="vertical"></div>
-		  <div class="collapse navbar-collapse" id="navbarNav">
-		    <ul class="navbar-nav">
-		      <li class="nav-item mr-3">
-		        <a class="nav-link" href="Beranda Logged.php">Beranda</a>
-		      </li>
-		      <li class="nav-item dropdown mr-3">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		        Harga Layanan
-		        </a>
-		        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		        	<li class="nav-item dropdown">
-		          	<a class="dropdown-item" href="#" data-toggle="dropdown">Website</a>
-			          	<ul class="dropdown-menu">
-			          		<li><a class="dropdown-item" href="#">Website Toko Online</a></li>
-			          		<li><a class="dropdown-item" href="#">Website Perusahaan</a></li>
-			          		<li><a class="dropdown-item" href="#">Blogger Development</a></li>
-			          	</ul>
-		          	</li>
-		          	<li class="nav-item dropdown">
-		          	<a class="dropdown-item" href="#" data-toggle="dropdown">Komputer</a>
-			          	<ul class="dropdown-menu">
-			          		<li><a class="dropdown-item" href="#">PC Operation System</a></li>
-			          		<li><a class="dropdown-item" href="#">Rakit/ Beli PC</a></li>
-			          		<li><a class="dropdown-item" href="#">Service PC</a></li>
-			          	</ul>
-		          	</li>
-		          	<li class="nav-item dropdown">
-		          	<a class="dropdown-item" href="#" data-toggle="dropdown">Jaringan</a>
-			          	<ul class="dropdown-menu">
-			          		<li><a class="dropdown-item" href="#">Jaringan Antar-PC</a></li>
-			          		<li><a class="dropdown-item" href="#">Pemasangan Wi-Fi</a></li>
-			          		<li><a class="dropdown-item" href="#">Service Struktur Listrik</a></li>
-			          	</ul>
-		          	</li>
-		          	<li class="nav-item dropdown">
-		          	<a class="dropdown-item" href="#" data-toggle="dropdown">Multimedia</a>
-			          	<ul class="dropdown-menu">
-			          		<li><a class="dropdown-item" href="#">Fotografi & Videografi</a></li>
-			          		<li><a class="dropdown-item" href="#">Pembuatan Animasi</a></li>
-			          		<li><a class="dropdown-item" href="#">Desain Grafis</a></li>
-			          	</ul>
-		          	</li>
-		        </ul>
-		      </li>
-		      <li class="nav-item mr-2">
-		        <a class="nav-link" href="Hubungi Kami.php">Hubungi Kami</a>
-		      </li>
-		    </ul>
-		    <ul class="tempat-akun" style="list-style: none;">
-			<li class="nav-item dropdown ">
-		        <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        <div class="row akun">
-			        	<div class="avatar"><img src="avatar/Autobot.jpg"></div>
-			        	<div class="nama_akun"><?php echo $_SESSION['nama']; ?></div>
-			        </div>
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="Profil.php">Akun saya</a>
-		          <a class="dropdown-item keluar" href="Beranda Logged.php?logout">Log out</a>
-		     </li>
-		     </ul>
-		  </div>
-		</div> <!-- container -->
-		</nav>
+		
 
-		<div class="label"><h1>CART</h1></div>
+		<div class="label">
+			<i class="fas fa-long-arrow-alt-left"></i>
+			<h1>CART</h1>
+		</div>
 
 
 		<!-- KONTEN -->
 		<div class="container">
+			<!-- <div class="row akun">
+				<div class="avatar"><img src="avatar/Autobot.jpg"></div>
+				<div class="nama_akun"><?php echo $_SESSION['nama']; ?></div>
+			</div> -->
+
 			<div class="row judul-tabel">
 
 				<div class="col-md-2 teks-judul-tabel"></div>
@@ -133,8 +70,14 @@
 
 			<div class="row tabel">
 
-				<div class="col-md-2 isi-tabel tabel-gambar"><a href="#"><i class="fas fa-times-circle"></i></a><a href="#"><img src="gambar/TKJ/Beli PC.png"></a></div>
-				<div class="col-md-4 isi-tabel"></div>
+				<div class="col-md-2 isi-tabel tabel-gambar">
+					<a href="#"><i class="fas fa-times-circle"></i></a><a href="#"><img src="gambar/TKJ/Beli PC.png"></a>
+				</div>
+				<div class="col-md-4 isi-tabel">
+					<div class="judul_produk">Website Toko Online</div>
+					<div class="edit"><a href="#"><i>Edit Opsi</i></a></div>
+					<div class="data_produk"></div>
+				</div>
 				<div class="col-md-2 isi-tabel"></div>
 				<div class="col-md-2 isi-tabel"></div>
 				<div class="col-md-2 isi-tabel"></div>
@@ -148,13 +91,17 @@
 				<div class="col-md-2 isi-tabel"></div>
 				<div class="col-md-2 isi-tabel"></div>
 			</div> <!-- tabel -->
+			<div class="btn btn-dark">UPDATE CART</div>
+
+			<div class="checkout"><b>TOTAL CART</b></div>
 		</div> <!-- container -->
+
 
 
 
 		
 
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 		<!-- FOOTER -->
 	<div class="footer-main-div">
