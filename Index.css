@@ -249,7 +249,7 @@ a:hover {
 	text-decoration: none;
 }
 
-.footer-main-div {
+/*.footer-main-div {
 	width: 100%;
 	height: auto;
 	margin: auto;
@@ -358,4 +358,17 @@ a:hover {
 	letter-spacing: 1px;
 	padding: 7px;
 	font-size: 14px;
+}*/
+
+.footer-main {
+	background-color: black;
+}
+
+.logo {
+	position: absolute;
+	left: 45%;
+}
+
+.logo p {
+
 }

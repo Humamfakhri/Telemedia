@@ -96,9 +96,11 @@
                 <div class="nama">
                 <?php 
                   if (!isset($_SESSION['LOGIN'])) {
-              echo "Pengguna";
-              }
-            ?>
+                  echo "Pengguna";
+                  }else{
+                    echo $_SESSION['nama'];
+                  }
+                ?>
           </div>
               </div>
             </a>

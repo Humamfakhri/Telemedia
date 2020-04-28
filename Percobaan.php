@@ -11,7 +11,7 @@
 					<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 					<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
 					<link rel="stylesheet" type="text/css" href="bootstrap/css/bootnavbar.css">
-					<link rel="stylesheet" type="text/css" href="Percobaan.css">
+					<link rel="stylesheet" type="text/css" href="Website Toko Online.css">
 					<link rel="icon" href="icon/TM Dadu.png">
 
 	<title>
@@ -64,6 +64,49 @@
 		      <li class="nav-item navnav mr-2">
 		        <a class="nav-link" href="Hubungi Kami.php">Hubungi Kami</a>
 		      </li>
+		    </ul>
+		    <!-- Kanan -->
+		    <ul class="navbar-nav ml-auto">
+		    	<li class="nav-item">
+		    		<?php
+			    		if (!isset($_SESSION['LOGIN'])) {
+			    			echo "
+			    	<a href='Cart.php'><i class='fas fa-shopping-cart' style='margin-top: 8px;'></i></a>
+			    </li>
+			<div class='vertical2' style='margin-top: 6px;'></div>
+		      	<li class='nav-item'>
+					<a class='btn btn-primary masuk' href='Masuk.php'>Masuk</a>
+				</li>
+				<li class='nav-item tombol_daftar'>
+						<a class='btn btn-primary daftar' href='Daftar.php'>Daftar</a>
+				</li>
+			    			";	
+			    		}else{
+			    			echo "
+					<a href='Cart.php'><i class='fas fa-shopping-cart'></i></a>
+				</li>
+			<div class='vertical2'></div>
+				<li class='nav-item dropdown'>
+					<a class='nav-link dropdown' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+					<div class='row profil'>
+						<div class='avatar'><img src='avatar/Autobot.jpg'></div>
+						<div class='nama'>
+			    			";
+			    			echo $_SESSION['nama'];
+							echo "
+						</div>
+					</div>
+					</a>
+					<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+						<li><a class='dropdown-item' href='Profil.php'>Akun saya</a></li>
+							<div class='log'>
+						<li><a class='dropdown-item keluar' href='Website Toko Online.php?logout'><b>Log out</b></a></li></div>
+					</ul>
+				</li>
+							";
+						}
+					?>
+
 		    </ul>
 		  </div>
 		</div>
@@ -131,18 +174,48 @@
 										";
 									}
 								?>
-								
-								<input type="hidden" name="hidden_nama" value="<?php echo $perproduk['nama_produk']; ?>">
-								<input type="hidden" name="hidden_gambar" value="<?php echo $perproduk['gambar_produk']; ?>">
-								<input type="hidden" name="hidden_harga" value="<?php echo $perproduk['harga_produk']; ?>">
+							<form method="POST" action="Cart.php?action=add&id=<?php echo $perproduk['id']; ?>">
+								<input type="hidden" name="quantity" value="1">
+								<input type="hidden" name="nama_produk" value="<?php echo $perproduk['nama_produk']; ?>">
+								<input type="hidden" name="gambar_produk" value="<?php echo $perproduk['gambar_produk']; ?>">
+								<input type="hidden" name="harga_produk" value="<?php echo $perproduk['harga_produk']; ?>">
 								<div class="tombol_pesan">
-									<a href="Proses Cart.php?id=<?php echo $perproduk['id']; ?>"class="btn pesan">PESAN</a>
+									<input type="submit" name="add" class="btn pesan" value="PESAN">
 								</div>
+							</form>
 							</div> <!-- kotak -->
 						</center>
 					</div> <!-- col-md-4 -->
 					<?php } ?>	
-					
+
+				<div class="jumbo_title_2">FITUR WEBSITE TOKO ONLINE</div>
+				<center><div class="hr_beranda_2"></div></center>
+				<div class="text_2">Fitur-Fitur Website Toko Online Anda yang akan Membantu Bisnis Anda.</div>
+
+				<div class="row">
+					<div class="col-md-3">
+						<i class="far fa-comments"></i>
+						<p>LIVE CHAT</p>
+						<p class="deskripsi_fitur">Fitur Live Chat yang memudahkan Anda untuk berkonsultasi dengan pelanggan. Siap menerima order kapan saja.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fas fa-funnel-dollar"></i>
+						<p>LAPORAN PENJUALAN</p>
+						<p class="deskripsi_fitur">Dengan adanya Laporan Penjualan Anda dapat dengan mudah mendata hasil penjualan dalam periode tertentu.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fas fa-qrcode"></i>
+						<p>KODE PEMBAYARAN</p>
+						<p class="deskripsi_fitur">Kode pembayaran adalah 4 digit angka unik yang mempermudah klarifikasi transaksi. 4 digit ini diambil dari nomor telepon pemesan.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="far fa-credit-card"></i>
+						<p>ONLINE PAYMENT</p>
+						<p class="deskripsi_fitur">Berbagai jenis fitur pembayaran online seperti transfer bank atau Credit Card sehingga pelanggan dapat lebih mudah untuk melakukan transaksi.</p>
+					</div>
+				</div>
+			</div> <!-- container -->
+		</div>
 				
 	
 

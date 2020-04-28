@@ -1,6 +1,19 @@
 <?php 
 	session_start();
- ?>
+
+	if (isset($_GET['logout'])) {
+
+      if (isset($_SESSION['LOGIN'])) {
+        unset($_SESSION['LOGIN']);
+        session_unset();
+        session_destroy();
+        $_SESSION = array ();
+      }
+
+      header("location: Index.php");
+      exit();
+  }
+?>
 
 
 <!DOCTYPE html>
@@ -55,7 +68,7 @@
 		          	<a class="dropdown-item" href="#" data-toggle="dropdown">PC & Internet</a>
 			          	<ul class="dropdown-menu">
 			          		<li><a class="dropdown-item" href="OS PC.php">PC Operation System</a></li>
-			          		<li><a class="dropdown-item" href="Pemasangan Wi-fi.php">Pemasangan Wi-Fi</a></li>
+			          		<li><a class="dropdown-item" href="Pemasangan Wi-fi.php">Beli Komputer</a></li>
 			          		<li><a class="dropdown-item" href="Service PC.php">Service PC</a></li>
 			          	</ul>
 		          	</li>
@@ -108,7 +121,7 @@
 					<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
 						<li><a class='dropdown-item' href='Profil.php'>Akun saya</a></li>
 							<div class='log'>
-						<li><a class='dropdown-item keluar' href='Beranda Logged.php?logout'><b>Log out</b></a></li></div>
+						<li><a class='dropdown-item keluar' href='Index.php?logout'><b>Log out</b></a></li></div>
 					</ul>
 				</li>
 							";
@@ -176,12 +189,12 @@
 				<div class="judul_kebutuhan">WEBSITE</div>
 				<div class="row baris_1">
 					<div class="col-md-4">
-						<a href="Website Toko Online.php"><div class="img_icon"><img src="gambar/TKJ/Website online shop.png" height="70"></div>
+						<a href="Website Toko Online.php"><div class="img_icon"><img src="gambar/TKJ/Online Shop.png" height="70"></div>
 						<div class="judul_img">WEBSITE TOKO ONLINE</div></a>
 						<div class="text_img">Saya ingin punya website yang ada fitur katalog produk, keranjang belanja, ongkir, diskon, dll</div>
 					</div>
 					<div class="col-md-4">
-						<a href="Website Perusahaan.php"><div class="img_icon"><img src="gambar/TKJ/Website perusahaan.png" height="70"></div>
+						<a href="Website Perusahaan.php"><div class="img_icon"><img src="gambar/TKJ/Web perusahaan.png" height="70"></div>
 						<div class="judul_img">WEBSITE PERUSAHAAN</div></a>
 						<div class="text_img">Saya ingin membuat website profil untuk perusahaan saya yang bergerak dibidang jasa atau agensi.</div>
 					</div>
@@ -198,18 +211,18 @@
 				<div class="judul_kebutuhan">KOMPUTER</div>
 				<div class="row baris_2">
 					<div class="col-md-4">
-						<a href="OS PC.php"><div class="img_icon"><img src="gambar/TKJ/Instalasi OS.jpg" height="70"></div>
+						<a href="Instalasi OS PC.php"><div class="img_icon"><img src="gambar/TKJ/OS PC.jpg" height="70"></div>
 						<div class="judul_img">INSTALASI OS PC</div></a>
 						<div class="text_img">Saya ingin punya website yang ada fitur katalog produk, keranjang belanja, ongkir, diskon, dll</div>
 					</div>
 					<div class="col-md-4">
-						<a href="Pemasangan Wi-Fi.php"><div class="img_icon"><img src="gambar/TJA/Wifi.png" height="70"></div>
-						<div class="judul_img">PEMASANGAN WI-FI</div></a>
+						<a href="Beli Komputer.php"><div class="img_icon"><img src="gambar/TKJ/Computer.png" height="70"></div>
+						<div class="judul_img">BELI KOMPUTER</div></a>
 						<div class="text_img">Saya ingin membuat website profil untuk perusahaan saya yang bergerak dibidang jasa atau agensi.</div>
 					</div>
 					<div class="col-md-4">
-						<a href="Service PC.php"><div class="img_icon"><img src="gambar/TKJ/Service PC.png" height="70"></div>
-						<div class="judul_img">SERVICE PC</div></a>
+						<a href="Service Komputer.php"><div class="img_icon"><img src="gambar/TKJ/Service PC.png" height="70"></div>
+						<div class="judul_img">SERVICE KOMPUTER</div></a>
 						<div class="text_img">Saya masih ingin menggunakan PC saya, tetapi PC-nya bermasalah dan tidak bisa digunakan.</div>
 					</div>
 				</div> <!-- row 2-->
@@ -243,7 +256,7 @@
 
 
 		<!-- FOOTER -->
-	<div class="footer-main-div">
+	<!-- <div class="footer-main-div">
 		<div class="footer-social-icons">
 			<ul>
 				<li><a href="#" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -272,10 +285,17 @@
 			</ul>
 		</div>
 
-	</div> <!-- footer-main -->
+	</div> --> <!-- footer-main -->
 
-	<div class="footer-bawah">
+	<!-- <div class="footer-bawah">
 		&copy; 2020 TELEMEDIA
+	</div> -->
+
+	<div class="footer-main">
+		<div class="row logo">
+			<img src="icon/TM Dadu.png" width="120">
+			<p>TELEMEDIA</p>
+		</div>
 	</div>
 	
 

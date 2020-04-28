@@ -1,7 +1,8 @@
 <?php 	
 		session_start();
+		
 		if (isset($_SESSION['LOGIN'])) {
-			header("location: Dashboard.php");
+			header("location: Index.php");
 			exit();
 		}
 
