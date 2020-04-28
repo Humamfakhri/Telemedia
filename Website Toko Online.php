@@ -1,13 +1,6 @@
 <?php 
 	session_start();
 
-	// if (!isset($_SESSION['LOGIN'])) {
-	// 	header("location: Masuk.php");
-	// 	exit();
-	// }
-
-	
-
 	if (isset($_GET['logout'])) {
 
 			if (isset($_SESSION['LOGIN'])) {
@@ -17,8 +10,48 @@
 				$_SESSION = array ();
 			}
 
-			header("location: Masuk.php");
+			header("location: Index.php");
 			exit();
+	}
+
+	if (isset($_POST['submit'])) {
+		if (isset($_SESSION['cart'])) {
+			$item_array_id = array_column($_SESSION['cart'], 'id');
+			if (!in_array($_GET['id'], $item_array_id)) {
+				$count = count($_SESSION['cart']);
+				$item_array = array(
+					'id' => $_GET['id'], 
+					'nama_produk' => $_POST['nama_produk'],
+					'harga_produk' => $_POST['harga_produk'],
+					'quantity_produk' => $_POST['quantity_produk'],
+				);
+				$_SESSION['cart'][$count] = $item_array;
+				echo "<script>window.location='Website Toko Online.php'</script>";
+			}else{
+				echo "<script>alert(Produk telah dimasukkan ke Cart)</script>";
+				echo "<script>window.location='Website Toko Online.php'</script>";
+			}
+		}else{
+				$item_array = array(
+					'id' => $_GET['id'], 
+					'nama_produk' => $_POST['nama_produk'],
+					'harga_produk' => $_POST['harga_produk'],
+					'quantity_produk' => $_POST['quantity_produk'],
+				);
+				$_SESSION['cart'][0] = $item_array;
+		}
+	}
+
+	if (isset($_GET['action'])) {
+		if ($_GET['action'] == 'delete') {
+			foreach ($_SESSION['cart'] as $key => $value) {
+				if ($value['id'] == $_GET['id']) {
+					unset($_SESSION['cart'][$key]);
+					echo "<script>alert('Produk berhasil dihapus...!')</script>";
+					echo "<script>window.location='Website Toko Online.php'</script>";
+				}
+			}
+		}
 	}
  ?>
 
@@ -86,30 +119,44 @@
 		    <!-- Kanan -->
 		    <ul class="navbar-nav ml-auto">
 		    	<li class="nav-item">
-		        	<a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
-		    	</li>
-		      <div class="vertical2"></div>
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        <div class="row profil">
-			        	<div class="avatar"><img src="avatar/Autobot.jpg"></div>
-			        	<div class="nama">
-			        	<?php 
-			        		if (!isset($_SESSION['LOGIN'])) {
-							echo "Pengguna";
-							}else{
-								echo $_SESSION['nama'];
-							}
-						?>
+		    		<?php
+			    		if (!isset($_SESSION['LOGIN'])) {
+			    			echo "
+			    	<a href='Cart.php'><i class='fas fa-shopping-cart' style='margin-top: 8px;'></i></a>
+			    </li>
+			<div class='vertical2' style='margin-top: 6px;'></div>
+		      	<li class='nav-item'>
+					<a class='btn btn-primary masuk' href='Masuk.php'>Masuk</a>
+				</li>
+				<li class='nav-item tombol_daftar'>
+						<a class='btn btn-primary daftar' href='Daftar.php'>Daftar</a>
+				</li>
+			    			";	
+			    		}else{
+			    			echo "
+					<a href='Cart.php'><i class='fas fa-shopping-cart'></i></a>
+				</li>
+			<div class='vertical2'></div>
+				<li class='nav-item dropdown'>
+					<a class='nav-link dropdown' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+					<div class='row profil'>
+						<div class='avatar'><img src='avatar/Autobot.jpg'></div>
+						<div class='nama'>
+			    			";
+			    			echo $_SESSION['nama'];
+							echo "
+						</div>
 					</div>
-			        </div>
-		        </a>
-		        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <li><a class="dropdown-item" href="Profil.php">Akun saya</a></li>
-		          	<div class="log">
-		          <li><a class="dropdown-item keluar" href="Beranda Logged.php?logout"><b>Log out</b></a></li></div>
-		        </ul>
-		      </li>
+					</a>
+					<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+						<li><a class='dropdown-item' href='Profil.php'>Akun saya</a></li>
+							<div class='log'>
+						<li><a class='dropdown-item keluar' href='Website Toko Online.php?logout'><b>Log out</b></a></li></div>
+					</ul>
+				</li>
+							";
+						}
+					?>
 
 		    </ul>
 		  </div>
@@ -124,9 +171,17 @@
 				<center>
 				<div class="jumbo_title_1"><strong>PAKET HARGA WEBSITE TOKO ONLINE</strong></div>
 				<div class="hr_beranda_1"></div>
-				<div class="text_beranda_1">Kami berikan harga yang tepat dan pas untuk Anda. Pastikan Anda berkonsultasi terlebih dahulu.</div>
+				<div class="text_1">Kami berikan harga yang tepat dan pas untuk Anda. Pastikan Anda berkonsultasi terlebih dahulu.</div>
+
 
 				<div class="row">
+				<?php
+					include('koneksi-product.php');
+
+					$query = mysqli_query($koneksi, "SELECT * FROM product ORDER BY id ASC");
+
+					while ($db = $query->fetch_assoc()) {
+				?>
 					<div class="col-md-4 isi">
 						<center>
 						<h4>BASIC</h4>
@@ -135,77 +190,148 @@
 									<p class="rp">Rp</p>
 									<h1>1.2 JT</h1>
 								</div> <!-- header -->
-								<p>Gratis Domain .com</p><hr>
-								<p>Kuota Upload 2 GB</p><hr>
-								<p>Email Subscription</p><hr>
-								<p>Bandwith Unlimited</p><hr>
-								<p>Jumlah Produk 2.000+</p><hr>
-								<p>Statistik Pengunjung</p><hr>
-								<p>Kode Pembayaran</p><hr>
-								<p>Konfirmasi Pembayaran</p>
-								<div class="tombol_pesan">
-									<div class="btn pesan">PESAN</div>
+							<?php 
+								if ($db['id'] == 1) {
+									echo "
+										<p>Gratis Domain .com</p><hr>
+										<p>Kuota Upload 2 GB</p><hr>
+										<p>Email Subscription<i class='fas fa-times'></i></p><hr>
+										<p>Bandwith Unlimited</p><hr>
+										<p>Jumlah Produk 2.000+</p><hr>
+										<p>Statistik Pengunjung</p><hr>
+										<p>Ongkir JNE, TIKI, POS, J&T</p><hr>
+										<p>Kode Pembayaran</p><hr>
+										<p>Konfirmasi Pembayaran</p>
+									";
+								}elseif ($db['id'] == 2) {
+									echo "
+										<p>Gratis Domain .com</p><hr>
+										<p>Kuota Upload 4 GB</p><hr>
+										<p>Email Subscription<i class='fas fa-times'></i></p><hr>
+										<p>Bandwith Unlimited</p><hr>
+										<p>Jumlah Produk 2.000+</p><hr>
+										<p>Statistik Pengunjung</p><hr>
+										<p>Ongkir JNE, TIKI, POS, J&T</p><hr>
+										<p>Kode Pembayaran</p><hr>
+										<p>Konfirmasi Pembayaran</p>
+									";
+								}else{
+									echo "
+										<p>Gratis Domain .com</p><hr>
+										<p>Kuota Upload 6 GB</p><hr>
+										<p>Email Subscription<i class='fas fa-times'></i></p><hr>
+										<p>Bandwith Unlimited</p><hr>
+										<p>Jumlah Produk 2.000+</p><hr>
+										<p>Statistik Pengunjung</p><hr>
+										<p>Ongkir JNE, TIKI, POS, J&T</p><hr>
+										<p>Kode Pembayaran</p><hr>
+										<p>Konfirmasi Pembayaran</p>
+									";
+								}
+							?>
+
+							<form method="POST" action="Website Toko Online.php?action=add&id=<?php echo $db['id']; ?>">
+								<div class="product">
+									<!-- <input type="file" name="gambar_produk" value="<?php echo $db['gambar_produk']; ?>"> -->
+									<input type="text" name="quantity_produk" class="form-control" value="1" style="width: 50px;">
+									<input type="hidden" name="harga_produk" value="<?php echo $db['harga_produk']; ?>">
+									<input type="hidden" name="nama_produk" value="<?php echo $db['nama_produk']; ?>">
+
+									<div class="tombol_pesan">
+										<input type="submit" name="submit" class="btn pesan" value="PESAN">
+									</div>
 								</div>
+							</form>
 							</div> <!-- kotak -->
 						</center>
 					</div>
-					<div class="col-md-4 isi">
-						<center>
-						<h4>MEDIUM</h4>
-							<div class="kotak">
-								<div class="header">
-									<p class="rp">Rp</p>
-									<h1>2.3 JT</h1>
-								</div> <!-- header -->
-								<p>Gratis Domain .com</p><hr>
-								<p>Kuota Upload 4 GB</p><hr>
-								<p>Email Subscription</p><hr>
-								<p>Bandwith Unlimited</p><hr>
-								<p>Jumlah Produk 2.000+</p><hr>
-								<p>Statistik Pengunjung</p><hr>
-								<p>Kode Pembayaran</p><hr>
-								<p>Konfirmasi Pembayaran</p>
-								<div class="tombol_pesan">
-									<div class="btn pesan">PESAN</div>
-								</div>
-							</div> <!-- kotak -->
-						</center>
-					</div>
-					<div class="col-md-4 isi">
-						<center>
-						<h4>ADVANCED</h4>
-							<div class="kotak">
-								<div class="header">
-									<p class="rp">Rp</p>
-									<h1>2.7 JT</h1>
-								</div> <!-- header -->
-								<p>Gratis Domain .com</p><hr>
-								<p>Kuota Upload 6 GB</p><hr>
-								<p>Email Subscription</p><hr>
-								<p>Bandwith Unlimited</p><hr>
-								<p>Jumlah Produk 2.000+</p><hr>
-								<p>Statistik Pengunjung</p><hr>
-								<p>Kode Pembayaran</p><hr>
-								<p>Konfirmasi Pembayaran</p>
-								<div class="tombol_pesan">
-									<div class="btn pesan">PESAN</div>
-								</div>
-							</div> <!-- kotak -->
-						</center>
+					<?php
+						} 
+					?> <!-- while -->
+
+					<div style="clear: both;"></div>
+					<h3 class="title2">Shopping Cart Details</h3>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+						<tr>
+							<th width="30%">Nama Produk</th>
+							<th width="10%">Quantity</th>
+							<th width="13%">Harga Produk</th>
+							<th width="10%">Total Harga</th>
+							<th width="17%">Hapus Produk</th>
+						</tr>
+
+					<?php
+							if (!empty($_SESSION['cart'])) {
+								$total = 0;
+								foreach ($_SESSION['cart'] as $key => $value) {
+						?>
+
+						<tr>
+							<td><?php echo $value['nama_produk']; ?></td>
+							<td><?php echo $value['quantity_produk']; ?></td>
+							<td>Rp<?php echo number_format($value['harga_produk']); ?></td>
+							<td>Rp<?php echo number_format($value['quantity_produk'] * $value['harga_produk']); ?></td>
+							<td><a href="Website Toko Online.php?action=delete&id=<?php echo $value['id']; ?>"> <span class="text-danger">Hapus</span></a></td>
+						</tr>
+
+						<?php 
+							$total = $total + ($value['quantity_produk'] * $value['harga_produk']);
+						}
+						?>
+
+						<tr>
+							<td colspan="3" align="right">Total</td>
+							<th align="right">Rp<?php echo number_format($total); ?></th>
+						</tr>
+
+						<?php 
+						}
+					?>
+						</table>
 					</div>
 				</div>
-			</div> <!-- container --></center>
+
+
+
+					
+				<div class="jumbo_title_2">FITUR WEBSITE TOKO ONLINE</div>
+				<center><div class="hr_beranda_2"></div></center>
+				<div class="text_2">Fitur-Fitur Website Toko Online Anda yang akan Membantu Bisnis Anda.</div>
+
+				<div class="row">
+					<div class="col-md-3">
+						<i class="far fa-comments"></i>
+						<p>LIVE CHAT</p>
+						<p class="deskripsi_fitur">Fitur Live Chat yang memudahkan Anda untuk berkonsultasi dengan pelanggan. Siap menerima order kapan saja.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fas fa-funnel-dollar"></i>
+						<p>LAPORAN PENJUALAN</p>
+						<p class="deskripsi_fitur">Dengan adanya Laporan Penjualan Anda dapat dengan mudah mendata hasil penjualan dalam periode tertentu.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fas fa-qrcode"></i>
+						<p>KODE PEMBAYARAN</p>
+						<p class="deskripsi_fitur">Kode pembayaran adalah 4 digit angka unik yang mempermudah klarifikasi transaksi. 4 digit ini diambil dari nomor telepon pemesan.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="far fa-credit-card"></i>
+						<p>ONLINE PAYMENT</p>
+						<p class="deskripsi_fitur">Berbagai jenis fitur pembayaran online seperti transfer bank atau Credit Card sehingga pelanggan dapat lebih mudah untuk melakukan transaksi.</p>
+					</div>
+				</div>
+			</div> <!-- container -->
 		</div>
 
 
 
 
-
-
-		<br><br><br><br><br><br><br><br><br>
-
 		<!-- FOOTER -->
 	<div class="footer-main-div">
+		<div class="brand">
+			<img src="icon/TM Dadu.png" width="90">TELEMEDIA
+		</div>
 		<div class="footer-social-icons">
 			<ul>
 				<li><a href="#" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -237,11 +363,9 @@
 	</div> <!-- footer-main -->
 
 	<div class="footer-bawah">
-		&copy; 2020 TELEMEDIA
+		Copyright &copy; 2020 TELEMEDIA
 	</div>
 	
-
-			
 
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

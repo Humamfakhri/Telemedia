@@ -13,9 +13,9 @@ body {
 }
 
 .navbar {
-	background-color: #191d23;
 	font-family: Micro;
 	font-size: 15px;
+	background-color: #191d23;
 }
 
 .icon_nav {
@@ -31,6 +31,12 @@ body {
 
 #navbarNav ul li a:hover {
 	color: cyan;
+}
+
+#navbarNav ul .tombol_daftar a:hover {
+	color: black;
+	background-color: cyan;
+	border-color: cyan;
 }
 
 .vertical {
@@ -70,8 +76,8 @@ body {
 }
 
 .masuk:hover {
-	background-color: #00c4cc;
-	border-color: #00c4cc;
+	background-color: transparent;
+	border-color: cyan;
 }
 
 .daftar {
@@ -80,11 +86,6 @@ body {
 	border-color: #fff;
 	padding: 1 1px;
 	font-size: 14px;
-}
-
-.daftar:hover {
-	background-color: #00c4cc;
-	border-color: #00c4cc;
 }
 
 .profil {
@@ -107,9 +108,7 @@ body {
 	color: red;
 }
 
-.log a:hover {
-	color: red;
-}
+.log a:hover { color: red; }
 
 	/*OPENING*/
 
@@ -126,12 +125,13 @@ body {
 	margin-top: 25px;
 }
 
-.text_beranda_1 {
+.text_1 {
 	color: #4C4C4C;
 	margin-top: 30px;
 	font-size: 17px;
 	margin-bottom: 70px;
 }
+
 
 
 	/*PAKET*/
@@ -147,7 +147,7 @@ body {
 }
 
 .isi:hover {
-	transform: translateY(-20px);
+	transform: translateY(-10px);
 }
 
 .rp {
@@ -184,6 +184,20 @@ body {
 	width: 300px;
 }
 
+.fa-times {
+	color: red;
+	vertical-align: middle;
+	margin-left: 5px;
+	font-size: 18px;	
+}
+
+.fa-check {
+	color: #19ab03;
+	vertical-align: middle;
+	margin-left: 5px;
+	font-size: 18px;	
+}
+
 .tombol_pesan {
 	background-color: #F9F9F9;
 	padding: 20px;
@@ -197,9 +211,79 @@ body {
 }
 
 .pesan:hover {
-	background: transparent;
-	color: #00c4cc;
-	border: 1px solid #00c4cc;
+	background: #019298;
+	color: white;
+}
+
+
+	/*FITUR WEBSITE*/
+
+.jumbo_title_2 {
+	text-align: center;
+	font-size: 30px;
+	color: #698988;
+	margin-top: 70px;
+}
+
+.hr_beranda_2 {
+	width: 40px;
+	height: 2px;
+	background-color: #698898;
+	margin-top: 20px;
+
+}
+
+.text_2 {
+	color: #4C4C4C;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.col-md-3 {
+	margin-top: 50px;
+	text-align: center;
+	color: #4C4C4C;
+}
+
+.col-md-3 i {
+	font-size: 45px;
+	margin-bottom: 20px;
+}
+
+.col-md-3 p {
+	font-weight: bold;
+	color: #698988;
+	font-size: 18px;
+}
+
+.col-md-3 .deskripsi_fitur {
+	font-weight: normal;
+	font-size: 14px;
+	color: #4C4C4C;
+	margin-bottom: 100px;
+}
+
+.table, th, tr {
+	text-align: center;
+}
+
+.title2 {
+	margin-left: 36.5%;
+	color: #66afe9;
+	background-color: #efefef;
+	padding: 2%;
+	margin-top: 50px;
+}
+
+h2 {
+	text-align: center;
+	color: #66afe9;
+	background-color: #efefef;
+	padding: 2%;
+}
+
+table th {
+	background-color: #efefef;
 }
 
 
@@ -219,6 +303,14 @@ a:hover {
 	margin: auto;
 	background: #293039;
 	padding: 20px 0;
+}
+
+.brand {
+	margin-left: 39.5%;
+	margin-bottom: 40px;
+	color: white;
+	font-size: 35px;
+	font-weight: bold;
 }
 
 .footer-social-icons {
@@ -258,7 +350,7 @@ a:hover {
 	width: 100%;
 	height: auto;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .footer-menu-one ul {
@@ -288,7 +380,7 @@ a:hover {
 	width: 100%;
 	height: auto;
 	margin: auto;
-	margin-top: 15px;
+	margin-top: 40px;
 }
 
 .footer-menu-two ul {
@@ -323,3 +415,4 @@ a:hover {
 	padding: 7px;
 	font-size: 14px;
 }
+

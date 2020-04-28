@@ -21,21 +21,6 @@ body {
 	margin: 0 auto;
 }
 
-.cart-icon {
-	position: absolute;
-	right: 125px;
-	top: 15px;
-	font-size: 20px;
-}
-
-.fa-shopping-cart {
-	color: white;
-}
-
-.fa-shopping-cart:hover {
-	color: cyan;
-}
-
 .navigation {
 	background-color: #262c35;
 	font-family: Micro;
@@ -102,6 +87,10 @@ body {
 	text-align: center;
 }
 
+.tabel {
+	border-bottom: 1px solid #dfdfdf;
+}
+
 .produk {
 	text-align: left;
 	padding-left: 20px;
@@ -121,7 +110,7 @@ body {
 
 .isi-tabel {
 	padding: 10px 20px;
-	border-bottom: 1px solid #dfdfdf;
+	margin: auto 0;
 }
 
 .isi-tabel img {
@@ -129,17 +118,32 @@ body {
 	width: 100px;
 }
 
+.harga p {
+	text-align: center;
+}
+
 .judul_produk {
 	color: #585858;
+	font-weight: bold;
 }
 
 .edit {
 	margin-top: -5px;
+	margin-bottom: 5px;
 }
 
 .edit a {
-	font-size: 12px;
+	font-size: 11px;
 	color: #606060;
+}
+
+.quantity input {
+	width: 50px;
+}
+
+.data_produk {
+	font-size: 12px;
+	color: #698988;
 }
 
 .btn-dark {
@@ -159,13 +163,6 @@ body {
 /*KONTEN*/
 
 
-.fa-long-arrow-alt-left {
-	position: absolute;
-	left: 120px;
-	top: 90px;
-	font-size: 30px;
-}
-
 .label {
 	text-align: center;
 	width: 100%;
@@ -173,9 +170,27 @@ body {
 	box-shadow: 1px 2px 4px #999999;
 }
 
-.label h1 {
-	color: #383838;
+.label h2 {
+	color: black;
 	font-weight: bold;
+}
+
+.label .row {
+	margin-left: 44%;
+	margin-top: 10px;
+}
+
+.label .row a {
+	color: black;
+}
+
+.garing {
+	margin-left: 8px;
+}
+
+.fa-shopping-cart {
+	margin-left: 8px;
+
 }
 
 

@@ -4,9 +4,7 @@
 	if (!isset($_SESSION['LOGIN'])) {
 		header("location: Masuk.php");
 		exit();
-	}
-
-	
+	}	
 
 	if (isset($_GET['logout'])) {
 
@@ -19,6 +17,43 @@
 
 			header("location: Masuk.php");
 			exit();
+	}
+
+	if (isset($_POST['submit'])) {
+		if (isset($_SESSION['cart'])) {
+			$item_array_id = array_column($_SESSION['cart'], 'product_id');
+			if (!in_array($_GET['id'], $item_array_id)) {
+				$count = count($_SESSION['cart']);
+				$item_array = array(
+					'id' => $_GET['id'], 
+					'nama_produk' => $_POST['nama_produk'],
+					'harga_produk' => $_POST['harga_produk'],
+					'quantity_produk' => $_POST['quantity_produk'],
+				);
+				$_SESSION['cart'][$count] = $item_array;
+				echo "<script>window.location='Cart.php'</script>";
+			}else{
+				$item_array = array(
+					'id' => $_GET['id'], 
+					'nama_produk' => $_POST['nama_produk'],
+					'harga_produk' => $_POST['harga_produk'],
+					'quantity_produk' => $_POST['quantity_produk'],
+				);
+				$_SESSION['cart'][0] = $item_array;
+			}
+		}
+	}
+
+	if (isset($_GET['action'])) {
+		if ($_GET['action'] == 'delete') {
+			foreach ($_SESSION['cart'] as $key => $value) {
+				if ($value['id'] == $_GET['id']) {
+					unset($_SESSION['cart'][$key]);
+					echo "<script>alert('Produk berhasil dihapus...!')</script>";
+					echo "<script>window.location='Cart.php'</script>";
+				}
+			}
+		}
 	}
  ?>
 
@@ -47,9 +82,13 @@
 		
 
 		<div class="label">
-			<i class="fas fa-long-arrow-alt-left"></i>
-			<h1>CART</h1>
+			<h2>CART</h2>
+			<div class="row">
+					<a href="Index.php"><i class="fas fa-home"></i>  Beranda</a><span class="garing">/</span>
+					<a href="Cart.php"><i class="fas fa-shopping-cart"></i>  Cart</a>
+			</div>
 		</div>
+
 
 
 		<!-- KONTEN -->
@@ -71,30 +110,47 @@
 			<div class="row tabel">
 
 				<div class="col-md-2 isi-tabel tabel-gambar">
-					<a href="#"><i class="fas fa-times-circle"></i></a><a href="#"><img src="gambar/TKJ/Beli PC.png"></a>
+					<a href="#"><i class="fas fa-times-circle"></i></a><a href="#"><img src=""></a>
 				</div>
 				<div class="col-md-4 isi-tabel">
-					<div class="judul_produk">Website Toko Online</div>
+					<div class="judul_produk"></div>
 					<div class="edit"><a href="#"><i>Edit Opsi</i></a></div>
-					<div class="data_produk"></div>
+					<div class="data_produk">	
+							Nama Domain: Telemedia
+
+						<br>No Telp Penjualan:
+							087885519899
+
+						<br>Email Penjualan:
+							humamfakhri@gmail.com
+
+						<br>No Rekening Penjualan:
+							09801923098123
+
+						<br>Profil Singkat Usaha:
+							Telemedia
+					</div>
 				</div>
-				<div class="col-md-2 isi-tabel"></div>
-				<div class="col-md-2 isi-tabel"></div>
-				<div class="col-md-2 isi-tabel"></div>
+				<div class="col-md-2 isi-tabel harga">
+
+				</div>
+				<div class="col-md-2 isi-tabel">
+					<div class="quantity">
+						
+					</div>
+				</div>
+				<div class="col-md-2 isi-tabel">
+				</div>
 			</div> <!-- tabel -->
 
-			<div class="row tabel">
 
-				<div class="col-md-2 isi-tabel tabel-gambar"><a href="#"><i class="fas fa-times-circle"></i></a><a href="#"><img src="gambar/MM/Desain Grafis.png"></a></div>
-				<div class="col-md-4 isi-tabel"></div>
-				<div class="col-md-2 isi-tabel"></div>
-				<div class="col-md-2 isi-tabel"></div>
-				<div class="col-md-2 isi-tabel"></div>
-			</div> <!-- tabel -->
 			<div class="btn btn-dark">UPDATE CART</div>
 
 			<div class="checkout"><b>TOTAL CART</b></div>
 		</div> <!-- container -->
+
+
+		
 
 
 
