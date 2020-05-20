@@ -1,0 +1,73 @@
+/*FOOTER*/
+
+a:hover {
+    text-decoration: none;
+}
+
+.footer-atas {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-image: url("Beranda.jpg");
+    background-size: cover;
+    padding: 20px 0;
+}
+
+.brand-footer {
+    margin-left: 37%;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.brand-footer p {
+    margin: 40px 0;
+}
+
+.judul-footer {
+    margin-bottom: 20px;
+}
+
+.judul-footer a{
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.judul-footer a:hover {
+    color: white;
+}
+
+.footer-utama {
+    margin-bottom: 60px;
+}
+
+.isi-footer a {
+    color: #ffffff99;
+    font-size: 14px;
+}
+
+.isi-footer a:hover {
+    color: white;
+}
+
+.silence a:hover {
+    color: #ffffff99;
+}
+
+.hr-judul-footer {
+    background-color: white;
+    width: 40px;
+    height: 2px;
+}
+
+.hr-footer-bawah {
+    background-color: #313131;
+}
+
+.footer-bawah {
+    background: transparent;
+    color: #ffffff99;
+    font-size: 14px;
+}

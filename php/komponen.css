@@ -1,0 +1,39 @@
+/*PAKET*/
+
+.paket h2 {
+    font-weight: bold;
+    color: #698988;
+}
+
+.atas {
+    background-color: #00c4cc;
+    padding-left: 33%;
+}
+
+.atas p {
+    font-size: 20px;
+}
+
+.atas h1 {
+    font-weight: bold;
+}
+
+.fa-times {
+    color: red;
+    margin-left: 5px;
+}
+
+.fa-check {
+    color: #03a903;
+    margin-left: 5px;
+}
+
+.bawah {
+    background-color: #efefef;
+    padding: 15px;
+}
+
+.btn-info {
+    border-radius: 0px;
+    padding: 7px 25px;
+}

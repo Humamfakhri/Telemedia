@@ -9,7 +9,7 @@
 					<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 					<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
 					<link rel="stylesheet" type="text/css" href="Daftar.css">
-					<link rel="icon" href="icon/TM Dadu.png">
+					<link rel="icon" href="icon/TM White.png">
 
 	<title>
 		Daftar | Telemedia
@@ -19,7 +19,7 @@
 
 		<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container">
-		  <img src="icon/TM Dadu.png" width="45" class="icon_nav">
+		  <img src="icon/TM White.png" width="45" class="icon_nav">
 		  <a class="navbar-brand">TELEMEDIA</a>
 		  <div class="vertical"></div>
 		  <div class="collapse navbar-collapse" id="navbarNav">
@@ -35,14 +35,19 @@
 	<!-- FORM -->
 	<div id="kotak">
 		<div class="konten">
-			<img src="icon/TM Dadu.png" width="120" id="tm">
+			<img src="icon/TM White.png" width="120" id="tm">
 			<div class="judul">
 				<h3>Silakan Daftar</h3>
-				<div class="underline"></div>
 			</div>
+			<p><?php
+					if (isset($_GET['used'])) {
+					   	echo "<font color='#ff0000'>Maaf, akun telah digunakan</font>";
+					}
+				?>
+				</p>
+
 			<form method="POST" action="actiondaftar.php">
-				
-				<input class="isi" type="text" name="nama" placeholder="Nama Lengkap" required>
+				<input class="isi" type="text" name="nama" placeholder="Username" required>
 				<i class="fas fa-user fa-lg fa-fw"></i>
 				<div class="border_bawah"></div>
 				<input class="isi" type="email" name="email" placeholder="Alamat Email" required>
@@ -54,10 +59,10 @@
 			    <input type="hidden" readonly class="form-control-plaintext" id="staticEmail" name="tipe_user" value="pengguna">
 
 				<input id="submit-btn" type="submit" name="submit" value="DAFTAR"><br>
-				<div id="masuk">Sudah memiliki akun? <a href="Masuk.php" class="pisah">Masuk</a></div><br><br>
+				<div id="masuk">Sudah memiliki akun? <a href="Masuk.php" class="pisah">Masuk</a></div>
 			</form>
 		</div>
-	</div>
+	</div> <!-- kotak -->
 	<!-- <a class="kembali" href="Beranda.php">Kembali</a> -->
 
 	<div class="copyright">&copy; 2020 TELEMEDIA</div>
@@ -68,5 +73,17 @@
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		    <script>
+		    	$("form input[type=text]").on("change invalid", function() {
+				    var textfield = $(this).get(0);
+				    
+				    // hapus dulu pesan yang sudah ada
+				    textfield.setCustomValidity("");
+				    
+				    if (!textfield.validity.valid) {
+				      textfield.setCustomValidity("Mohon isi form!");  
+				    }
+				});
+		    </script>
 </body>
 </html>

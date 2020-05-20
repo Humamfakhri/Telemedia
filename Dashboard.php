@@ -56,7 +56,7 @@
               <h5>
                   <!-- <a href="#"><i class="fas fa-envelope mr-3" data-toggle="tooltip" title="Surat Masuk"></i></a>
                   <a href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="Notifikasi"></i></a> -->
-                  <a href="Beranda Logged.php?logout"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Keluar"></i></a>
+                  <a href="Index.php?logout"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Keluar"></i></a>
               </h5>
           </div>
         </div>
@@ -73,7 +73,7 @@
             <div class="col-md-2 bg-dark pr-3 pt-4 kiri">
               <div class="row profil">
                 <div class="avatar">
-                  <img src="avatar/Autobot.jpg">
+                  <img src="avatar/user.jpg">
                 </div>
                 <div class="nama">
                   <h5><?php echo $_SESSION['nama']; ?></h5>

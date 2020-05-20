@@ -1,0 +1,138 @@
+@font-face {
+	font-family: Micro;
+	src: url(font/Segoe_UI.woff);
+}
+
+/*JUMBOTRON*/
+
+.jumbotron {
+	background-image: url(gambar/Beranda.jpg);
+	background-size: cover;
+	height: 791px;
+	text-align: center;
+	color: #fff;
+	margin-top: -190px;
+}
+
+.display-4 {
+	margin-top: 270px;
+	margin-bottom: 40px;
+}
+
+.jumbotron p {
+	font-size: 20px;
+}
+
+.jumbotron .btn {
+	margin-top: 20px;
+	font-size: 17px;
+	padding: 8px 50px;
+	background-color: #00c4cc;
+	border-color: #00c4cc;
+}
+
+								/*TKJ A*/
+
+							.jumbo_title_1 {
+								font-size: 40px;
+								color: #698988;
+								margin-top: 50px;
+							}
+
+							.hr_beranda_1 {
+								width: 40px;
+								height: 2px;
+								background-color: #698898;
+								margin-top: 25px;
+							}
+
+							.text_beranda_1 {
+								color: #4C4C4C;
+								margin-top: 30px;
+								font-size: 17px;
+							}
+
+							.icon_beranda {
+								font-size: 80px;
+								margin-top: 50px;
+								color: #698988;
+							}
+
+							.judul_icon {
+								margin-top: 30px;
+								font-size: 24px;
+								color: #698988;
+							}
+
+							.text_icon {
+								margin-top: 20px;
+								color: #4C4C4C;
+								font-size: 14px;
+							}
+
+								/*TKJ B*/
+
+							.kebutuhan {
+								margin-top: 80px;
+								background-color: #ECF0F1;
+								padding-top: 40px;
+								padding-bottom: 200px;
+							}
+
+							.jumbo_title_2 {
+								font-size: 40px;
+								color: #698988;
+							}
+
+							.hr_beranda_2 {
+								width: 40px;
+								height: 2px;
+								background-color: #698898;
+								margin-top: 25px;
+							}
+
+							.judul_kebutuhan {
+								font-size: 30px;
+								font-weight: bold;
+								color: #00c4cc;
+								margin-top: 40px;
+								margin-bottom: 40px;
+							}
+
+							.hr_jasa {
+								width: 40px;
+								height: 2px;
+								background-color: #698898;
+							}
+
+							.baris_1 {
+								margin-bottom: 50px;
+							}
+
+							.baris_2 {
+								margin-bottom: 50px;
+							}
+
+							.baris_3 {
+
+							}
+
+							.judul_img {
+								margin-top: 25px;
+								font-weight: bold;
+							}
+
+							.text_img {
+								margin-top: 15px;
+								font-size: 14px;
+							}
+
+							.transisi {
+								transition: transform 0.4s;
+							}
+
+							.transisi:hover {
+								transform: scale(1.03);
+							}
+
+

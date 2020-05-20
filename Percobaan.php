@@ -12,7 +12,7 @@
 					<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
 					<link rel="stylesheet" type="text/css" href="bootstrap/css/bootnavbar.css">
 					<link rel="stylesheet" type="text/css" href="Website Toko Online.css">
-					<link rel="icon" href="icon/TM Dadu.png">
+					<link rel="icon" href="icon/TM White.png">
 
 	<title>
 		Telemedia
@@ -22,7 +22,7 @@
 
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
 		<div class="container">
-		  <img src="icon/TM Dadu.png" width="45" class="icon_nav">
+		  <img src="icon/TM White.png" width="45" class="icon_nav">
 		  <a class="navbar-brand">TELEMEDIA</a>
 		  <div class="vertical"></div>
 		  <div class="collapse navbar-collapse" id="navbarNav">
@@ -89,7 +89,7 @@
 				<li class='nav-item dropdown'>
 					<a class='nav-link dropdown' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 					<div class='row profil'>
-						<div class='avatar'><img src='avatar/Autobot.jpg'></div>
+						<div class='avatar'><img src='avatar/user.jpg'></div>
 						<div class='nama'>
 			    			";
 			    			echo $_SESSION['nama'];

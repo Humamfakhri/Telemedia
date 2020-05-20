@@ -2,11 +2,9 @@
   session_start();
 
   if (!isset($_SESSION['LOGIN'])) {
-   header("location: Masuk.php");
-   exit();
-  }
-
-  
+    header("location: Masuk.php");
+    exit();
+  } 
 
   if (isset($_GET['logout'])) {
 
@@ -20,6 +18,46 @@
       header("location: Masuk.php");
       exit();
   }
+
+  if (isset($_POST['submit'])) {
+    if (isset($_SESSION['cart'])) {
+      $item_array_id = array_column($_SESSION['cart'], 'id');
+      if (!in_array($_GET['id'], $item_array_id)) {
+        $count = count($_SESSION['cart']);
+        $item_array = array(
+          'id' => $_GET['id'], 
+          'nama_produk' => $_POST['nama_produk'],
+          'harga_produk' => $_POST['harga_produk'],
+          'quantity_produk' => $_POST['quantity_produk'],
+        );
+        $_SESSION['cart'][$count] = $item_array;
+        echo "<script>window.location='Cart.php'</script>";
+      }else{
+        echo "<script>alert(Produk telah dimasukkan ke Cart)</script>";
+        echo "<script>window.location='Cart.php'</script>";
+      }
+    }else{
+        $item_array = array(
+          'id' => $_GET['id'], 
+          'nama_produk' => $_POST['nama_produk'],
+          'harga_produk' => $_POST['harga_produk'],
+          'quantity_produk' => $_POST['quantity_produk'],
+        );
+        $_SESSION['cart'][0] = $item_array;
+    }
+  }
+
+  if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'delete') {
+      foreach ($_SESSION['cart'] as $key => $value) {
+        if ($value['id'] == $_GET['id']) {
+          unset($_SESSION['cart'][$key]);
+          echo "<script>alert('Produk berhasil dihapus...!')</script>";
+          echo "<script>window.location='Cart.php'</script>";
+        }
+      }
+    }
+  }
  ?>
 
 
@@ -29,180 +67,79 @@
           <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
           <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
           <link rel="stylesheet" type="text/css" href="bootstrap/css/bootnavbar.css">
-          <link rel="stylesheet" type="text/css" href="Website Toko Online.css">
-          <link rel="icon" href="icon/TM Dadu.png">
+          <link rel="stylesheet" type="text/css" href="Profil.css">
+          <link rel="icon" href="icon/TM White.png">
 
   <title>
     Telemedia
   </title>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
-    <div class="container">
-      <img src="icon/TM Dadu.png" width="45" class="icon_nav">
-      <a class="navbar-brand">TELEMEDIA</a>
-      <div class="vertical"></div>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item mr-3">
-            <a class="nav-link" href="Index.php">Beranda</a>
-          </li>
-          <li class="nav-item dropdown active mr-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Harga Layanan
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="nav-item dropdown">
-                <a class="dropdown-item" href="#" data-toggle="dropdown">Website</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Website Toko Online.php">Website Toko Online</a></li>
-                    <li><a class="dropdown-item" href="Website Perusahaan.php">Website Perusahaan</a></li>
-                    <li><a class="dropdown-item" href="Blogger Development.php">Blogger Development</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="dropdown-item" href="#" data-toggle="dropdown">PC & Internet</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="OS PC.php">PC Operation System</a></li>
-                    <li><a class="dropdown-item" href="Pemasangan Wi-fi.php">Pemasangan Wi-Fi</a></li>
-                    <li><a class="dropdown-item" href="Service PC.php">Service PC</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="dropdown-item" href="#" data-toggle="dropdown">Multimedia</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Fotografi & Videografi.php">Fotografi & Videografi</a></li>
-                    <li><a class="dropdown-item" href="Pembuatan Animasi.php">Pembuatan Animasi</a></li>
-                    <li><a class="dropdown-item" href="Desain Grafis.php">Desain Grafis</a></li>
-                  </ul>
-                </li>
-            </ul>
-          </li>
-          <li class="nav-item navnav mr-2">
-            <a class="nav-link" href="Hubungi Kami.php">Hubungi Kami</a>
-          </li>
-        </ul>
-        <!-- Kanan -->
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
-          </li>
-          <div class="vertical2"></div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="row profil">
-                <div class="avatar"><img src="avatar/Autobot.jpg"></div>
-                <div class="nama">
-                <?php 
-                  if (!isset($_SESSION['LOGIN'])) {
-                  echo "Pengguna";
-                  }else{
-                    echo $_SESSION['nama'];
-                  }
-                ?>
-          </div>
-              </div>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="Profil.php">Akun saya</a></li>
-                <div class="log">
-              <li><a class="dropdown-item keluar" href="Beranda Logged.php?logout"><b>Log out</b></a></li></div>
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark header">
+      <div class="row brand">
+        <img src="icon/TM White.png" width="45" class="icon_nav">
+          <a class="navbar-brand">TELEMEDIA</a>
+        </div>
     </nav>
 
+    
 
-
-    <!-- BERANDA -->
-    <div class="opening">
-      <div class="container">
-        <center>
-        <div class="jumbo_title_1"><strong>PAKET HARGA WEBSITE TOKO ONLINE</strong></div>
-        <div class="hr_beranda_1"></div>
-        <div class="text_beranda_1">Kami berikan harga yang tepat dan pas untuk Anda. Pastikan Anda berkonsultasi terlebih dahulu.</div>
-
-        <div class="row">
-          <div class="col-md-4 isi">
-            <center>
-            <h4>BASIC</h4>
-              <div class="kotak">
-                <div class="header">
-                  <p class="rp">Rp</p>
-                  <h1>1.2 JT</h1>
-                </div> <!-- header -->
-                <p>Gratis Domain .com</p><hr>
-                <p>Kuota Upload 2 GB</p><hr>
-                <p>Email Subscription</p><hr>
-                <p>Bandwith Unlimited</p><hr>
-                <p>Jumlah Produk 2.000+</p><hr>
-                <p>Statistik Pengunjung</p><hr>
-                <p>Kode Pembayaran</p><hr>
-                <p>Konfirmasi Pembayaran</p>
-                <div class="tombol_pesan">
-                  <div class="btn pesan">PESAN</div>
-                </div>
-              </div> <!-- kotak -->
-            </center>
-          </div>
-          <div class="col-md-4 isi">
-            <center>
-            <h4>MEDIUM</h4>
-              <div class="kotak">
-                <div class="header">
-                  <p class="rp">Rp</p>
-                  <h1>2.3 JT</h1>
-                </div> <!-- header -->
-                <p>Gratis Domain .com</p><hr>
-                <p>Kuota Upload 4 GB</p><hr>
-                <p>Email Subscription</p><hr>
-                <p>Bandwith Unlimited</p><hr>
-                <p>Jumlah Produk 2.000+</p><hr>
-                <p>Statistik Pengunjung</p><hr>
-                <p>Kode Pembayaran</p><hr>
-                <p>Konfirmasi Pembayaran</p>
-                <div class="tombol_pesan">
-                  <div class="btn pesan">PESAN</div>
-                </div>
-              </div> <!-- kotak -->
-            </center>
-          </div>
-          <div class="col-md-4 isi">
-            <center>
-            <h4>ADVANCED</h4>
-              <div class="kotak">
-                <div class="header">
-                  <p class="rp">Rp</p>
-                  <h1>2.7 JT</h1>
-                </div> <!-- header -->
-                <p>Gratis Domain .com</p><hr>
-                <p>Kuota Upload 6 GB</p><hr>
-                <p>Email Subscription</p><hr>
-                <p>Bandwith Unlimited</p><hr>
-                <p>Jumlah Produk 2.000+</p><hr>
-                <p>Statistik Pengunjung</p><hr>
-                <p>Kode Pembayaran</p><hr>
-                <p>Konfirmasi Pembayaran</p>
-                <div class="tombol_pesan">
-                  <div class="btn pesan">PESAN</div>
-                </div>
-              </div> <!-- kotak -->
-            </center>
-          </div>
-        </div>
-      </div> <!-- container --></center>
+    <!-- <div class="label">
+      <h2>CART</h2>
+      <div class="row">
+          <a href="Index.php"><i class="fas fa-home"></i>  Beranda</a><span class="garing">/</span>
+          <a href="Cart.php"><i class="fas fa-shopping-cart"></i>  Cart</a>
+      </div>
     </div>
+ -->
 
 
+    <!-- KONTEN -->
+    <div class="badan">
+      <div class="container">
+        <div class="row">
+
+          <!-- KIRI -->
+          <div class="col-md-2">
+            <div class="row profil">
+              <div class="avatar"><img src='avatar/user.jpg'></div>
+              <div class="nama">
+                <b><?php echo $_SESSION['nama']; ?></b>
+                <p><a href="#"><i class="fas fa-edit"></i>Ubah Profil</a></p>
+                </div>
+            </div>
+
+            <div class="sidebar">
+              <a href="Profil.php"><p><i class="fas fa-user"></i><span class="active">Akun Saya</span></p></a>
+              <a href="Cart.php"><p><i class='fas fa-shopping-cart'></i><span>Pesanan Saya</span></p></a>
+            </div>
+          </div>
+
+          <!-- KANAN -->
+          <div class="col-md-10">
+            <header>
+              <strong>Profil Saya</strong>
+              <p>Kelola informasi profil Anda untuk mengontrol, melindungi dan mengamankan akun</p>
+            </header>
+
+            <div class="container info-akun">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="row">
+                    Username
+                  </div>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+            </div> <!-- info-akun -->
+          </div> <!-- kanan -->
+        </div> <!-- row -->
+        <br><br><br><br><br><br><br><br>
+      </div> <!-- badan --> 
+    </div>
+  
 
 
-
-
-    <br><br><br><br><br><br><br><br><br>
 
     <!-- FOOTER -->
   <div class="footer-main-div">

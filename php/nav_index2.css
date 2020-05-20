@@ -1,0 +1,98 @@
+@font-face {
+    font-family: Micro;
+    src: url(font/Segoe_UI.woff);
+}
+
+.icon_nav {
+    margin-top: 4px;
+    margin-right: 7px;
+    border-radius: 10%;
+}
+
+.navbar-brand {
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+#navbarNav ul li a:hover {
+    color: cyan;
+}
+
+#navbarNav ul .tombol_daftar a:hover {
+    color: black;
+    background-color: cyan;
+    border-color: cyan;
+}
+
+.vertical {
+    background-color: #5f5959;
+    width: 1px;
+    height: 25px;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.fa-shopping-cart {
+    color: white;
+    font-size: 20px;
+}
+
+.cart-nav {
+    margin-top: 2px;
+}
+
+#cart_count {
+    margin: 5px 20px 5px 7px;
+    font-size: 18px;
+}
+
+.vertical2 {
+    background-color: #5f5959;
+    width: 1px;
+    height: 25px;
+    margin-top: 11px;
+}
+
+.masuk {
+    background-color: transparent;
+    border-color: #fff;
+    margin-right: 10px;
+    padding: 1 1px;
+    font-size: 14px;
+}
+
+.masuk:hover {
+    background-color: transparent;
+    border-color: cyan;
+}
+
+.daftar {
+    background-color: #fff;
+    color: black;
+    border-color: #fff;
+    padding: 1 1px;
+    font-size: 14px;
+}
+
+.profil {
+}
+
+.avatar img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.nama {
+    padding-left: 7px;
+    padding-top: 3px;
+    color: #fff;
+}
+
+.log a {
+    color: red;
+}
+
+.log a:hover {
+    color: red;
+}
